@@ -1,7 +1,6 @@
 import type {SettingTabBuilder} from "../setting/builder";
 import {Constants} from "../../constants";
 import {fetchPost} from "../../util/fetch";
-import {getCloudURL} from "../util/about";
 import {openByMobile} from "../../editor/openLink";
 import {sendAppSetting} from "./appRuntime";
 
@@ -109,7 +108,7 @@ const registerAboutInfoGroup = (tab: SettingTabBuilder) => {
 </div>`,
         afterMount: (root) => {
             root.querySelector("#sponsorBtn")?.addEventListener("click", () => {
-                openByMobile(getCloudURL("sponsor"));
+                openByMobile("https://github.com/TuriaArt/SvoyBloknot#-подумайте-о-том-чтобы-поддержать-проект");
             });
         },
     });
