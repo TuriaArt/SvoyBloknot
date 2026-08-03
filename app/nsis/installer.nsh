@@ -42,15 +42,15 @@ FunctionEnd
 !macro preInit
     ${IfNot} ${AtLeastWin10}
         !insertmacro WriteInstallLog "installer-rejected-unsupported-windows version=${VERSION}"
-        MessageBox MB_ICONEXCLAMATION "非常抱歉，思源笔记无法在低于 Windows 10 的系统上进行安装$\n$\n\
-            Sorry, SiYuan cannot be installed on systems below Windows 10$\n"
+        MessageBox MB_ICONEXCLAMATION "Извините, SvoyBloknot нельзя установить на Windows младше 10-й версии$\n$\n\
+            Sorry, SvoyBloknot cannot be installed on systems below Windows 10$\n"
         Quit
     ${EndIf}
 
     !insertmacro WriteInstallLog "installer-start version=${VERSION} package=$EXEPATH"
     Push $R8
     Push $R7
-    nsExec::Exec 'TASKKILL /F /IM "SiYuan.exe"'
+    nsExec::Exec 'TASKKILL /F /IM "SvoyBloknot.exe"'
     Pop $R8
     nsExec::Exec 'TASKKILL /F /IM "SiYuan-Kernel.exe"'
     Pop $R7
@@ -63,7 +63,7 @@ FunctionEnd
     ${FindIt} "$INSTDIR" "data" $R0
     ${If} -1 != $R0
         !insertmacro WriteInstallLog "installer-rejected-workspace-data version=${VERSION} target=$INSTDIR detected=$R0"
-        MessageBox MB_ICONSTOP "检测到安装路径下包含了工作空间数据 $R0，请将工作空间文件夹移到其他位置后再试。$\n$\n\
+        MessageBox MB_ICONSTOP "В пути установки обнаружены данные рабочего пространства $R0 — переместите папку рабочего пространства в другое место и попробуйте снова.$\n$\n\
             The workspace data $R0 was detected in the installation path, please move the workspace folder to another location and try again.$\n"
         Quit
     ${EndIf}
@@ -73,7 +73,7 @@ FunctionEnd
 !macro customUnInit
     ${un.FindIt} "$INSTDIR" "data" $R0
     ${If} -1 != $R0
-        MessageBox MB_ICONSTOP "检测到安装路径下包含了工作空间数据 $R0，请将工作空间文件夹移到其他位置后再试。$\n$\n\
+        MessageBox MB_ICONSTOP "В пути установки обнаружены данные рабочего пространства $R0 — переместите папку рабочего пространства в другое место и попробуйте снова.$\n$\n\
             The workspace data $R0 was detected in the installation path, please move the workspace folder to another location and try again.$\n"
         Quit
     ${EndIf}
@@ -94,7 +94,7 @@ FunctionEnd
 !macro customUnInstall
     ${IfNot} ${isUpdated}
         IfFileExists "$PROFILE\.config\siyuan\*.*" 0 skipConfigDelete
-            MessageBox MB_YESNO "是否需要彻底删除全局配置（$PROFILE\.config\siyuan\）？$\n$\n\
+            MessageBox MB_YESNO "Полностью удалить глобальную конфигурацию ($PROFILE\.config\siyuan\)?$\n$\n\
                 Do you want to delete the global configuration ($PROFILE\.config\siyuan\)?$\n" \
                 /SD IDYES IDYES AcceptedRMConf IDNO SkippedRMConf
                 AcceptedRMConf:
@@ -104,12 +104,12 @@ FunctionEnd
     ${EndIf}
 
     ${IfNot} ${isUpdated}
-        IfFileExists "$PROFILE\SiYuan\*.*" 0 skipWorkspaceDelete
-            MessageBox MB_YESNO "是否需要彻底删除默认工作空间（$PROFILE\SiYuan\）？$\n$\n\
-                Do you want to completely delete the default workspace ($PROFILE\SiYuan\)?$\n" \
+        IfFileExists "$PROFILE\SvoyBloknot\*.*" 0 skipWorkspaceDelete
+            MessageBox MB_YESNO "Полностью удалить рабочее пространство по умолчанию ($PROFILE\SvoyBloknot\)?$\n$\n\
+                Do you want to completely delete the default workspace ($PROFILE\SvoyBloknot\)?$\n" \
                 /SD IDNO IDYES AcceptedRMWorkspace IDNO SkippedRMWrokspace
                 AcceptedRMWorkspace:
-                    RMDir /r "$PROFILE\SiYuan\"
+                    RMDir /r "$PROFILE\SvoyBloknot\"
                 SkippedRMWrokspace:
         skipWorkspaceDelete:
     ${EndIf}

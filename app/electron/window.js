@@ -83,7 +83,7 @@ const I18N_BASE = {
         msgConfirm: "⚠️ 請確認沒有將工作空間設定在第三方同步盤路徑下，否則會造成資料損壞（iCloud/OneDrive/Dropbox/Google Drive/堅果雲/百度網盤/騰訊微雲等），是否繼續？",
     },
     "en": {
-        title: "SiYuan",
+        title: "SvoyBloknot",
         crashTip: "⚠️ A renderer process previously exited unexpectedly. This may be related to plugins, code snippets, or a custom theme and icon. Starting in safe mode is recommended. Safe mode disables all plugins and code snippets and switches to the default theme and icon. Related content is not deleted, but these settings must be restored manually after startup.",
         safeModeBtn: "🛡️ Start in safe mode",
         normalBtn: "Start normally",
@@ -503,7 +503,7 @@ const I18N_BASE = {
         msgConfirm: "⚠️ Confirme que o espaço de trabalho não está definido sob o caminho de um disco de sincronização de terceiros, caso contrário causará danos aos dados (iCloud/OneDrive/Dropbox/Google Drive/Nutstore/Baidu Netdisk/Tencent Weiyun, etc.), continuar?",
     },
     "ru": {
-        title: "SiYuan",
+        title: "SvoyBloknot",
         crashTip: "⚠️ Обнаружено, что процесс отрисовки ранее неожиданно завершился. Это может быть связано с плагинами, фрагментами кода или пользовательскими темами и значками. Рекомендуется запуск в безопасном режиме. Безопасный режим отключает все плагины и фрагменты кода, а также переключает на стандартные тему и значок. Связанные материалы не удаляются, но после запуска эти настройки нужно восстановить вручную.",
         safeModeBtn: "🛡️ Запустить в безопасном режиме",
         normalBtn: "Запустить в обычном режиме",
@@ -523,9 +523,9 @@ const I18N_BASE = {
         feedback: "Поддержка и обратная связь",
         community: "Сводка сообщества пользователей",
         download: "Скачать",
-        feedbackUrl: "https://liuyun.io/article/1686530886208",
-        communityUrl: "https://liuyun.io/article/1687779743723",
-        downloadUrl: "https://b3log.org/siyuan/en/download.html",
+        feedbackUrl: "https://github.com/TuriaArt/SvoyBloknot/issues",
+        communityUrl: "https://github.com/TuriaArt/SvoyBloknot",
+        downloadUrl: "https://github.com/TuriaArt/SvoyBloknot/releases",
         msgPartitionRoot: "⚠️ Не создавайте рабочее пространство в корневом пути раздела, создайте новую папку в качестве рабочего пространства",
         msgNotEmpty: "⚠️ Эта папка содержит другие файлы, создайте новую папку в качестве рабочего пространства",
         msgICloud: "⚠️ Эта папка находится по пути синхронизации iCloud, измените другой путь",
@@ -808,10 +808,10 @@ const chooseWorkspacePath = async (langData) => {
     const fs = require("fs");
     const {ipcRenderer} = require("electron");
 
-    let defaultWorkspace = path.join(decodeURIComponent(getSearch("home")), "SiYuan");
+    let defaultWorkspace = path.join(decodeURIComponent(getSearch("home")), "SvoyBloknot");
     if ("darwin" === process.platform) {
-        // Change the initial workspace path to ~/Library/Application Support/SiYuan on macOS https://github.com/siyuan-note/siyuan/issues/17095
-        defaultWorkspace = path.join(decodeURIComponent(getSearch("home")), "Library", "Application Support", "SiYuan");
+        // Change the initial workspace path to ~/Library/Application Support/SvoyBloknot on macOS https://github.com/siyuan-note/siyuan/issues/17095
+        defaultWorkspace = path.join(decodeURIComponent(getSearch("home")), "Library", "Application Support", "SvoyBloknot");
     }
     if (!fs.existsSync(defaultWorkspace)) {
         fs.mkdirSync(defaultWorkspace, {mode: 0o755, recursive: true});
