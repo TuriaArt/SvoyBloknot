@@ -4,6 +4,7 @@
 <a title="License" target="_blank" href="https://www.gnu.org/licenses/agpl-3.0.txt"><img src="https://img.shields.io/badge/license-AGPLv3-orange.svg?style=flat-square"></a>
 <a title="Releases" target="_blank" href="https://github.com/TuriaArt/SvoyBloknot/releases"><img src="https://img.shields.io/github/v/release/TuriaArt/SvoyBloknot.svg?style=flat-square&color=9CF"></a>
 <a title="Upstream" target="_blank" href="https://github.com/siyuan-note/siyuan"><img src="https://img.shields.io/badge/fork%20of-siyuan--note%2Fsiyuan-blueviolet.svg?style=flat-square"></a>
+<a title="YouTube" target="_blank" href="https://www.youtube.com/@TuriaArt"><img src="https://img.shields.io/badge/YouTube-TuriaArt-red.svg?style=flat-square&logo=youtube&logoColor=white"></a>
 </p>
 
 ---
@@ -207,3 +208,5 @@ siyuan export md --id <block-id> -w ~/SiYuan
 - В российских рублях: `9112 3801 6867 9092`
 
 Не обязательно — но приятно 🙂
+
+Ещё один бесплатный способ поддержать — подписаться на [YouTube-канал](https://www.youtube.com/@TuriaArt).
