@@ -1195,15 +1195,8 @@ func IsSubscriber() bool {
 }
 
 func IsPaidUser() bool {
-	if IsSubscriber() {
-		return true
-	}
-
-	u := Conf.GetUser()
-	if nil == u {
-		return false
-	}
-	return 1 == u.UserSiYuanOneTimePayStatus
+	// SiYuan-Tu: форк без привязки к официальной подписке — сторонняя синхронизация (S3/WebDAV/локальная) всегда разрешена.
+	return true
 }
 
 const (

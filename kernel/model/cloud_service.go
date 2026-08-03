@@ -274,10 +274,7 @@ func refreshUser() {
 }
 
 func refreshCheckDownloadInstallPkg() {
-	defer logging.Recover()
-
-	time.Sleep(3 * time.Minute)
-	checkDownloadInstallPkg()
+	// SiYuan-Tu: не проверяем и не скачиваем автоматически официальные пакеты SiYuan — см. CheckUpdate в updater.go.
 }
 
 func refreshAnnouncement() {

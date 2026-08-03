@@ -250,37 +250,10 @@ func getAnnouncements() (ret []*Announcement) {
 }
 
 func CheckUpdate(showMsg bool) {
-	if !showMsg {
-		return
-	}
-
-	if Conf.System.IsMicrosoftStore {
-		return
-	}
-
-	result, err := util.GetRhyResult(context.TODO(), showMsg)
-	if err != nil {
-		return
-	}
-
-	ver := result["ver"].(string)
-	releaseLang := result["release"].(string)
-	if releaseLangArg := result["release_"+Conf.Lang]; nil != releaseLangArg {
-		releaseLang = releaseLangArg.(string)
-	} else if releaseLangArg := result["release_"+util.LangToLegacy(Conf.Lang)]; nil != releaseLangArg {
-		// 兼容云端 JSON 数据中历史下划线 key（release_zh_CN 等）
-		releaseLang = releaseLangArg.(string)
-	}
-
-	if isVersionUpToDate(ver) {
-		util.PushUpdateMsg("update-notify", Conf.Language(10), 3000)
-	} else {
-		util.PushUpdateMsg("update-notify", fmt.Sprintf(Conf.Language(9), "<a href=\""+releaseLang+"\">"+releaseLang+"</a>"), 15000)
-	}
-	go func() {
-		defer logging.Recover()
-		checkDownloadInstallPkg()
-	}()
+	// SiYuan-Tu: форк не обращается к официальному сервису обновлений SiYuan —
+	// иначе уведомление "доступно обновление" вело бы на официальный релиз, а
+	// молчаливая автозагрузка/установка могла бы затереть патчи форка.
+	// Обновление форка — ручное действие (подтянуть апстрим и пересобрать), не автоматическое.
 }
 
 func isVersionUpToDate(releaseVer string) bool {
