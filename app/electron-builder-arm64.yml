@@ -1,5 +1,5 @@
-productName: "SiYuan"
-appId: "org.b3log.siyuan"
+productName: "SvoyBloknot"
+appId: "ru.turiaart.svoybloknot"
 publish: null
 asar: false
 compression: "normal"
@@ -36,7 +36,7 @@ nsis:
   deleteAppDataOnUninstall: true
   createDesktopShortcut: true
   createStartMenuShortcut: true
-  shortcutName: "SiYuan"
+  shortcutName: "SvoyBloknot"
   license: "../LICENSE"
   include: "nsis/installer.nsh"
   warningsAsErrors: false

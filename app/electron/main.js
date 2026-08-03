@@ -85,7 +85,7 @@ app.setPath("userData", path.join(app.getPath("appData"), app.getName() + "-Elec
 
 if (process.platform === "win32") {
     // Windows 需要设置 AppUserModelId 才能正确显示应用名称和应用图标 https://github.com/siyuan-note/siyuan/issues/17022
-    app.setAppUserModelId("org.b3log.siyuan");
+    app.setAppUserModelId("ru.turiaart.svoybloknot");
 }
 
 if (!app.requestSingleInstanceLock()) {
