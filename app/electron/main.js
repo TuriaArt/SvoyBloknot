@@ -886,7 +886,7 @@ const initMainWindow = (currentKernelPort = kernelPort) => {
 
     // 创建主窗体
     const currentWindow = new BrowserWindow({
-        title: "SiYuan",
+        title: "SvoyBloknot",
         show: false,
         width: windowState.width,
         height: windowState.height,
@@ -1722,7 +1722,7 @@ app.whenReady().then(() => {
         const wndBounds = getWindowByContentId(event.sender.id).getBounds();
         const wndScreen = screen.getDisplayNearestPoint({x: wndBounds.x, y: wndBounds.y});
         const printWin = new BrowserWindow({
-            title: "SiYuan",
+            title: "SvoyBloknot",
             show: true,
             width: Math.floor(wndScreen.size.width * 0.8),
             height: Math.floor(wndScreen.size.height * 0.8),
@@ -1765,7 +1765,7 @@ app.whenReady().then(() => {
         const mainBounds = mainWindow.getBounds();
         const mainScreen = screen.getDisplayNearestPoint({x: mainBounds.x, y: mainBounds.y});
         const win = new BrowserWindow({
-            title: "SiYuan",
+            title: "SvoyBloknot",
             show: true,
             trafficLightPosition: {x: 8, y: 13},
             width: Math.floor(data.width || mainScreen.size.width * 0.7),
