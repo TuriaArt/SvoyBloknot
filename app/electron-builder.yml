@@ -29,7 +29,7 @@ win:
     - target: "nsis"
 nsis:
   language: "1049"
-  installerLanguages: ["Russian", "English"]
+  installerLanguages: ["ru_RU", "en_US"]
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true
