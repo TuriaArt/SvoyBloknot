@@ -21,6 +21,8 @@
 - [⌨️ Интерфейс командной строки](#️-интерфейс-командной-строки)
 - [❓ Частые вопросы](#-частые-вопросы)
 - [🙏 Благодарности](#-благодарности)
+- [🤝 Обратная связь](#-обратная-связь)
+- [💛 Подумайте о том, чтобы поддержать проект](#-подумайте-о-том-чтобы-поддержать-проект)
 
 ---
 
@@ -107,6 +109,13 @@ SvoyBloknot использует то же ядро и ту же экосист�
 
 ## 🚀 Установка
 
+### Загрузите и установите
+
+<p>
+<a href="https://github.com/TuriaArt/SvoyBloknot/releases" target="_blank"><img src="https://img.shields.io/github/downloads/TuriaArt/SvoyBloknot/total?style=for-the-badge&label=DOWNLOADS&color=2ea44f&logo=github&logoColor=white"></a>
+<a href="https://github.com/TuriaArt/SvoyBloknot/releases/latest" target="_blank"><img src="https://img.shields.io/github/v/release/TuriaArt/SvoyBloknot?style=for-the-badge&label=RELEASE&color=8957e5"></a>
+</p>
+
 Готовые сборки для Windows — на странице [Releases](https://github.com/TuriaArt/SvoyBloknot/releases). Скачайте `.exe` и установите как обычную программу.
 
 Магазины приложений (App Store, Google Play, Microsoft Store), Docker/Unraid/TrueNAS-образы и пакеты для менеджеров пакетов — это официальные каналы распространения оригинальной SiYuan, этот форк там не публикуется. Для такого варианта установки используйте [апстрим](https://github.com/siyuan-note/siyuan#-download-setup).
@@ -183,3 +192,18 @@ siyuan export md --id <block-id> -w ~/SiYuan
 ## 🙏 Благодарности
 
 Ядро и подавляющая часть кода — заслуга команды [b3log / SiYuan Note](https://github.com/siyuan-note/siyuan) и её контрибьюторов. Список изменений именно этого форка — в истории git-коммитов и в [Releases](https://github.com/TuriaArt/SvoyBloknot/releases).
+
+## 🤝 Обратная связь
+
+Нашли баг, есть идея по улучшению или вопрос — открывайте [Issue](https://github.com/TuriaArt/SvoyBloknot/issues) или Pull Request. Буду рада любой обратной связи.
+
+## 💛 Подумайте о том, чтобы поддержать проект
+
+Если проект оказался полезен — можно перевести любую сумму на карту Belarusbank:
+
+- В белорусских рублях: `9112 3801 3437 1527`
+- В долларах США: `4255 1901 3828 9635`
+- В евро: `5470 8740 7566 2401`
+- В российских рублях: `9112 3801 6867 9092`
+
+Не обязательно — но приятно 🙂
