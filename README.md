@@ -125,7 +125,7 @@ SvoyBloknot использует то же ядро и ту же экосист�
 
 ```bash
 # Ядро (Go)
-cd kernel && go build -o ../app/kernel/SiYuan-Kernel.exe .
+cd kernel && CGO_ENABLED=1 go build -tags "fts5 sqlcipher" -ldflags "-s -w" -o ../app/kernel/SiYuan-Kernel.exe .
 
 # Приложение (Electron)
 cd app

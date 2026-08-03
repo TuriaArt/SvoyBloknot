@@ -48,7 +48,7 @@ SvoyBloknot — форк [siyuan-note/siyuan](https://github.com/siyuan-note/siy
 
 ```bash
 # Ядро (Go) — имя бинарника фиксировано, его ждёт app/electron/main.js
-cd kernel && go build -o ../app/kernel/SiYuan-Kernel.exe .
+cd kernel && CGO_ENABLED=1 go build -tags "fts5 sqlcipher" -ldflags "-s -w" -o ../app/kernel/SiYuan-Kernel.exe .
 
 # Фронтенд + упаковка в установщик (Electron + electron-builder, NSIS для Windows)
 cd app
