@@ -154,6 +154,14 @@ const SYNC_PROVIDER_DEFS: Record<Config.ISync["provider"], SyncProviderDef> = {
     ${window.siyuan.languages.syncThirdPartyProviderWebDAVIntro}
     <div class="fn__hr"></div>
     ${window.siyuan.languages.syncThirdPartyProviderTip}
+    <div class="fn__hr"></div>
+    <div class="b3-label__text"><strong>Как получить доступ по WebDAV:</strong>
+    <ul class="fn__list">
+        <li><strong>Яндекс.Диск</strong> — адрес <code>https://webdav.yandex.ru</code>, логин — обычный логин Яндекс. Паролем служит либо пароль аккаунта, либо, если включена двухфакторная аутентификация, отдельный «пароль приложения» — создать можно на <a href="https://id.yandex.ru/security/app-passwords" target="_blank">id.yandex.ru/security/app-passwords</a>.</li>
+        <li><strong>Mail.ru Облако</strong> — адрес <code>https://webdav.cloud.mail.ru</code>, логин и пароль — как от почты (тоже может понадобиться отдельный пароль приложения).</li>
+        <li><strong>Google Drive</strong> и большинство других облаков <strong>не поддерживают WebDAV напрямую</strong> — понадобится сторонний мост (например, rclone) или свой сервер (Nextcloud и т.п.).</li>
+    </ul>
+    </div>
 </div>`,
         genUnpaidIntro: genThirdPartyUnpaidIntro,
         fields: [
