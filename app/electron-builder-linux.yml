@@ -4,7 +4,7 @@ publish: null
 asar: false
 compression: "normal"
 copyright: "© 2020-present Yunnan Liandi Technology Co., Ltd."
-artifactName: "siyuan-${version}-${os}.${ext}"
+artifactName: "svoybloknot-${version}-${os}.${ext}"
 extraMetadata:
   main: "electron/main.js"
 directories:
