@@ -3,7 +3,7 @@ appId: "ru.turiaart.svoybloknot"
 publish: null
 asar: false
 compression: "normal"
-copyright: "© 2020-present Yunnan Liandi Technology Co., Ltd."
+copyright: "© 2020-present Yunnan Liandi Technology Co., Ltd.; fork modifications © 2026 TuriaArt"
 artifactName: "svoybloknot-${version}-${os}.${ext}"
 extraMetadata:
   main: "electron/main.js"
@@ -28,6 +28,8 @@ win:
   target:
     - target: "nsis"
 nsis:
+  language: "1049"
+  installerLanguages: ["Russian", "English"]
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true
