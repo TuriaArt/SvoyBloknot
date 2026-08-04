@@ -1,7 +1,6 @@
 import type {SettingTabBuilder} from "../setting/builder";
 import {Constants} from "../../constants";
 import {openByMobile} from "../../editor/openLink";
-import {sendAppSetting} from "./appRuntime";
 
 const registerAboutVersionGroup = (tab: SettingTabBuilder) => {
     const group = tab.group("version", "");
@@ -17,15 +16,8 @@ const registerAboutVersionGroup = (tab: SettingTabBuilder) => {
         html: genAboutVersionHtml,
         afterMount: mountAboutVersionSlot,
     });
-    /// #if !BROWSER
-    if (!window.siyuan.config.system.isMicrosoftStore && window.siyuan.config.system.container === "std" && window.siyuan.config.system.os !== "linux") {
-        group.switch("system.downloadInstallPkg", {
-            title: window.siyuan.languages.autoDownloadUpdatePkg,
-            desc: window.siyuan.languages.autoDownloadUpdatePkgTip,
-            save: (value) => sendAppSetting("system.downloadInstallPkg", value),
-        });
-    }
-    /// #endif
+    // SvoyBloknot: автообновление отключено намеренно на уровне ядра (см. ARCHITECTURE.md) —
+    // переключатель "автоматически загружать пакет обновления" ни на что не влиял бы, убран.
 };
 
 const genAboutVersionHtml = (): string => {
