@@ -1,6 +1,5 @@
 import type {SettingTabBuilder} from "../setting/builder";
 import {Constants} from "../../constants";
-import {fetchPost} from "../../util/fetch";
 import {openByMobile} from "../../editor/openLink";
 import {sendAppSetting} from "./appRuntime";
 
@@ -59,14 +58,9 @@ const mountAboutVersionSlot = (root: HTMLElement) => {
     }
     const updateElement = root.querySelector("#checkUpdateBtn") as HTMLButtonElement | null;
     updateElement?.addEventListener("click", () => {
-        const svgElement = updateElement.querySelector("svg");
-        if (!svgElement || svgElement.classList.contains("fn__rotate")) {
-            return;
-        }
-        svgElement.classList.add("fn__rotate");
-        fetchPost("/api/system/checkUpdate", {showMsg: true}, () => {
-            svgElement.classList.remove("fn__rotate");
-        });
+        // Автопроверка обновлений на сервис SiYuan отключена намеренно (см. ARCHITECTURE.md) —
+        // просто открываем страницу релизов форка вместо вызова /api/system/checkUpdate.
+        openByMobile("https://github.com/TuriaArt/SvoyBloknot/releases");
     });
 };
 
