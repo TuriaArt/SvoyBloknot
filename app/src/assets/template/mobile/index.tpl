@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>SiYuan</title>
+    <title>SvoyBloknot</title>
     <meta name="viewport" content="width=device-width, height=device-height, interactive-widget=overlays-content, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
     <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
 </head>
 <body class="fn__flex-column">
 <div id="loading" class="b3-dialog b3-dialog--open">
     <div class="b3-dialog__scrim" style="background-color: #1e1e1e"></div>
-    <img style="position: absolute;width: 24vh;" src="../../icon.svg">
+    <img style="position: absolute;width: 24vh;border-radius: 12%;" src="../../icon.png">
 </div>
 <div class="toolbar toolbar--border">
     <svg id="toolbarFile" class="toolbar__icon">
