@@ -1909,7 +1909,7 @@
 		"21": "Please enter the captcha",
 		"22": "The captcha is incorrect",
 		"23": "The data repo is corrupted, please reset the data repo",
-		"24": "Network timed out, please try again later",
+		"24": "Network timed out — the model took longer to respond than allowed. Try again, or increase \"AI Agent Stream Idle Timeout\" in Settings → AI (especially if using a local model on modest hardware).",
 		"25": "The attribute name can only contain lowercase English letters, digits, and hyphens, and must start with a lowercase English letter",
 		"26": "Please initialize the data repo key first in [Settings - Account & Sync - Data repo key]",
 		"27": "Uploading [%v]",

@@ -1818,7 +1818,14 @@ func classifyRetry(err error) string {
 
 func getAgentErrorMessage(err error) string {
 	msg := strings.ToLower(err.Error())
-	if strings.Contains(msg, "context deadline exceeded") || strings.Contains(msg, "context canceled") || strings.Contains(msg, "timeout") || strings.Contains(msg, "exceeded while awaiting") {
+	// SvoyBloknot: расширенный список — многие таймаут-подобные обрывы соединения (EOF при долгой
+	// генерации, сброс соединения, обрыв TLS) исходно попадали в общее "сеть аномальная" сообщение,
+	// хотя по факту это тот же случай, что и явный timeout — пользователю нужна одна и та же
+	// подсказка (попробовать ещё раз / увеличить Stream Idle Timeout).
+	if strings.Contains(msg, "context deadline exceeded") || strings.Contains(msg, "context canceled") ||
+		strings.Contains(msg, "timeout") || strings.Contains(msg, "exceeded while awaiting") ||
+		strings.Contains(msg, "unexpected eof") || strings.Contains(msg, "connection reset") ||
+		strings.Contains(msg, "broken pipe") || strings.Contains(msg, "i/o timeout") {
 		return kernelModel.Conf.Language(24)
 	}
 	return kernelModel.Conf.Language(28)
