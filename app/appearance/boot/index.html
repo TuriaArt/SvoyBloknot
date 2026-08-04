@@ -24,14 +24,15 @@
             height: 100%;
         }
 
-        #bg img {
+        #bg video {
             width: 24vh;
             height: 24vh;
             align-self: center;
+            border-radius: 12%;
             opacity: 0;
             transform: scale(0.9);
-            filter: drop-shadow(0 0 12px rgba(155, 89, 182, 0.5));
-            animation: bootLogoForm 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+            filter: drop-shadow(0 0 16px rgba(155, 89, 182, 0.55));
+            animation: bootLogoForm 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
         }
 
         @keyframes bootLogoForm {
@@ -84,7 +85,7 @@
 </head>
 <body>
 <div id="bg">
-    <img src="sb-logo.png" alt="SvoyBloknot">
+    <video src="boot-animation.mp4" autoplay loop muted playsinline></video>
 </div>
 <div id="progressWrap">
     <div id="progressTrack"></div>
@@ -146,20 +147,12 @@
                     progressing = true
                     es.close()
                     if (navigator.userAgent.indexOf('Electron') === -1) {
-                        // 内核完成后尽快结束动画，把剩余动画快进到终态（200ms 收尾）
-                        const animTotalMs = 2500
+                        // Видео зациклено, доигрывать нечего — просто не даём экрану загрузки
+                        // мелькнуть короче минимального времени показа, если ядро стартовало мгновенно
+                        const minShowMs = 1200
                         const elapsed = Date.now() - bootShowStart
-                        const remaining = animTotalMs - elapsed
-                        const bootImg = document.querySelector("#bg img")
-                        if (remaining > 0 && bootImg) {
-                            const rate = remaining / 200
-                            bootImg.getAnimations().forEach((a) => {
-                                a.playbackRate = rate
-                            })
-                            setTimeout(redirect, 200)
-                        } else {
-                            redirect()
-                        }
+                        const remaining = minShowMs - elapsed
+                        setTimeout(redirect, Math.max(0, remaining))
                     }
                 }
             }
