@@ -1706,7 +1706,7 @@
 	"theme": "Theme",
 	"language": "Language",
 	"about": "About",
-	"about1": "Copyright (c) 2020-present Yunnan Liandi Technology Co., Ltd.; fork modifications (c) 2026 TuriaArt • <a target='_blank' href='https://github.com/TuriaArt/SvoyBloknot/blob/master/PRIVACY.md'>Privacy Policy</a>",
+	"about1": "Fork of SiYuan Note, AGPL-3.0-or-later • <a target='_blank' href='https://github.com/TuriaArt/SvoyBloknot/blob/master/PRIVACY.md'>Privacy Policy</a>",
 	"about2": "Use on browser",
 	"about3": "Please use the Chrome browser and stay on the same network as the computer, port <code class='fn__code'>${port}</code> (the first started workspace, in addition to the random port, will also automatically listen on <code class='fn__code'>6806</code> as a fixed port to facilitate the browser clipping extension or other external programs calling the kernel interface), possible reachable random port network addresses:",
 	"about4": "Open browser",
