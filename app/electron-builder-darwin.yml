@@ -25,7 +25,7 @@ mac:
   entitlementsInherit: "../../entitlements.mas.plist"
   minimumSystemVersion: "12.0.0"
   protocols:
-    - name: "SiYuan"
+    - name: "SvoyBloknot"
       schemes:
         - "siyuan"
   extraResources:
@@ -40,8 +40,6 @@ extraResources:
     to: "changelogs"
   - from: "stage"
     to: "stage"
-  - from: "guide"
-    to: "guide"
     filter: "!**/{.DS_Store,.git,.gitignore,.idea}"
   - from: "appearance/boot"
     to: "appearance/boot"
@@ -54,6 +52,7 @@ extraResources:
     filter: "!**/{.DS_Store}"
   - from: "appearance/langs"
     to: "appearance/langs"
+    filter: ["en.json", "ru.json"]
     filter: "!**/{.DS_Store}"
   - from: "appearance/emojis"
     to: "appearance/emojis"

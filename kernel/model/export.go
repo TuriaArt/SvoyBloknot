@@ -1529,7 +1529,7 @@ func ProcessPDF(id, p string, merge, removeAssets, watermark bool) (err error) {
 		processPDFWatermark(pdfCtx, watermark)
 
 		pdfcpuVer := model.VersionStr
-		model.VersionStr = "SiYuan v" + util.Ver + " (pdfcpu " + pdfcpuVer + ")"
+		model.VersionStr = "SvoyBloknot v" + util.Ver + " (pdfcpu " + pdfcpuVer + ")"
 		if writeErr := api.WriteContextFile(pdfCtx, p); nil != writeErr {
 			logging.LogErrorf("write pdf context failed: %s", writeErr)
 			return nil
@@ -1825,7 +1825,7 @@ func processPDFLinkEmbedAssets(pdfCtx *model.Context, assetDests []string, boxID
 		}
 
 		fn := filepath.Base(AssetPathWithoutQuery(sourceURI))
-		fileSpecDict, newErr := pdfCtx.XRefTable.NewFileSpecDict(fn, fn, "attached by SiYuan", *ir)
+		fileSpecDict, newErr := pdfCtx.XRefTable.NewFileSpecDict(fn, fn, "attached by SvoyBloknot", *ir)
 		if nil != newErr {
 			logging.LogWarnf("new file spec dict failed: %s", newErr)
 			continue

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    <title>SvoyBloknot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <style>
         html {
             overflow: hidden;
@@ -24,9 +25,9 @@
             height: 100%;
         }
 
-        #bg video {
-            width: 24vh;
-            height: 24vh;
+        #bg img {
+            width: 48vh;
+            height: 48vh;
             align-self: center;
             border-radius: 12%;
             opacity: 0;
@@ -85,7 +86,7 @@
 </head>
 <body>
 <div id="bg">
-    <video src="boot-animation.mp4" autoplay loop muted playsinline></video>
+    <img src="boot-icon.png" alt="SvoyBloknot LOGO">
 </div>
 <div id="progressWrap">
     <div id="progressTrack"></div>
@@ -147,7 +148,7 @@
                     progressing = true
                     es.close()
                     if (navigator.userAgent.indexOf('Electron') === -1) {
-                        // Видео зациклено, доигрывать нечего — просто не даём экрану загрузки
+                        // Статичная иконка — просто не даём экрану загрузки
                         // мелькнуть короче минимального времени показа, если ядро стартовало мгновенно
                         const minShowMs = 1200
                         const elapsed = Date.now() - bootShowStart

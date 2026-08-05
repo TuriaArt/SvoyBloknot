@@ -690,7 +690,7 @@ const resetSystemShutdown = (ports) => {
     systemShutdownState = systemShutdownNone;
     gracefulSystemShutdownPromise = undefined;
     keepAppOpenDuringSystemShutdown = false;
-    writeLog("system shutdown canceled because SiYuan failed to exit gracefully [ports=" + ports.join(",") + "]");
+    writeLog("system shutdown canceled because SvoyBloknot failed to exit gracefully [ports=" + ports.join(",") + "]");
     ports.forEach((port) => {
         const workspace = workspaces.find((item) => port.toString() === item.port.toString());
         if (workspace && workspace.browserWindow && !workspace.browserWindow.isDestroyed()) {
@@ -914,7 +914,7 @@ const initMainWindow = (currentKernelPort = kernelPort) => {
         writeLog("window position [x=" + x + ", y=" + y + "]");
         currentWindow.setPosition(x, y);
     }
-    currentWindow.webContents.userAgent = "SiYuan/" + appVer + " https://b3log.org/siyuan Electron " + currentWindow.webContents.userAgent;
+    currentWindow.webContents.userAgent = "SvoyBloknot/" + appVer + " https://github.com/TuriaArt/SvoyBloknot Electron " + currentWindow.webContents.userAgent;
 
     // 加载主界面。setProxy 用超时兜底包装：Electron 在某些系统代理配置下 session.setProxy 可能永久
     // pending（既不 resolve 也不 reject），会导致 loadURL 永不执行，主窗口卡在启动页无法显示。
@@ -1189,7 +1189,7 @@ const initKernel = (workspace, port, lang, safeMode) => {
                         case 0:
                             break;
                         default:
-                            errorWindowId = showErrorWindow("内核因未知原因退出", "The kernel exited for unknown reasons", `<div>思源内核因未知原因退出 [code=${code}]，请尝试重启操作系统后再启动思源。如果该问题依然发生，请检查杀毒软件是否阻止思源内核启动。</div><div>SiYuan Kernel exited for unknown reasons [code=${code}], please try to reboot your operating system and then start SiYuan again. If occurs this problem still, please check your anti-virus software whether kill the SiYuan Kernel.</div>`);
+                            errorWindowId = showErrorWindow("Ядро завершилось по неизвестной причине", "The kernel exited for unknown reasons", `<div>Ядро SvoyBloknot завершилось по неизвестной причине [code=${code}] — попробуйте перезагрузить операционную систему и запустить SvoyBloknot заново. Если проблема повторяется, проверьте, не блокирует ли антивирус запуск процесса SiYuan-Kernel.</div><div>SvoyBloknot Kernel exited for unknown reasons [code=${code}], please try to reboot your operating system and then start SvoyBloknot again. If this problem still occurs, please check whether your anti-virus software is blocking the SiYuan-Kernel process.</div>`);
                             break;
                     }
 
@@ -1212,7 +1212,7 @@ const initKernel = (workspace, port, lang, safeMode) => {
                 writeLog("get kernel version failed: " + e.message);
                 if (14 < ++count) {
                     writeLog("get kernel ver failed");
-                    showErrorWindow("获取内核服务端口失败", "Failed to Obtain Kernel Service Port", "<div>获取内核服务端口失败，请确保程序拥有网络权限并不受防火墙和杀毒软件阻止。</div><div>Failed to obtain kernel service port. Please ensure SiYuan has network permissions and is not blocked by firewalls or antivirus software.</div>");
+                    showErrorWindow("Не удалось получить порт сервиса ядра", "Failed to Obtain Kernel Service Port", "<div>Не удалось получить порт сервиса ядра — убедитесь, что у программы есть сетевые разрешения и её не блокируют брандмауэр или антивирус.</div><div>Failed to obtain kernel service port. Please ensure SvoyBloknot has network permissions and is not blocked by firewalls or antivirus software.</div>");
                     bootWindow.destroy();
                     resolve(false);
                     return;
@@ -1237,9 +1237,9 @@ const initKernel = (workspace, port, lang, safeMode) => {
                 while (!progressing) {
                     if (Date.now() - bootShowStart > bootTimeout) {
                         writeLog("boot progress timeout after " + bootTimeout + "ms, exiting boot");
-                        showErrorWindow("启动超时", "Boot timeout",
-                            "<div>内核启动超时，请查看 工作空间/temp/siyuan.log 获取详细报错信息，或尝试重启思源。</div>" +
-                            "<div>Kernel boot timed out. Please check workspace/temp/siyuan.log for details, or try restarting SiYuan.</div>");
+                        showErrorWindow("Превышено время ожидания запуска", "Boot timeout",
+                            "<div>Ядро не запустилось за отведённое время — подробности см. в workspace/temp/siyuan.log, либо попробуйте перезапустить SvoyBloknot.</div>" +
+                            "<div>Kernel boot timed out. Please check workspace/temp/siyuan.log for details, or try restarting SvoyBloknot.</div>");
                         requestKernelExit(currentKernelPort);
                         bootWindow.destroy();
                         resolve(false);
@@ -1739,7 +1739,7 @@ app.whenReady().then(() => {
             },
         });
         printWin.center();
-        printWin.webContents.userAgent = "SiYuan/" + appVer + " https://b3log.org/siyuan Electron " + printWin.webContents.userAgent;
+        printWin.webContents.userAgent = "SvoyBloknot/" + appVer + " https://github.com/TuriaArt/SvoyBloknot Electron " + printWin.webContents.userAgent;
         printWin.loadURL(data);
         windowNavigate(printWin, "export");
     });
@@ -1792,7 +1792,7 @@ app.whenReady().then(() => {
             win.center();
         }
         win.setAlwaysOnTop(data.alwaysOnTop);
-        win.webContents.userAgent = "SiYuan/" + appVer + " https://b3log.org/siyuan Electron " + win.webContents.userAgent;
+        win.webContents.userAgent = "SvoyBloknot/" + appVer + " https://github.com/TuriaArt/SvoyBloknot Electron " + win.webContents.userAgent;
         win.webContents.session.setSpellCheckerLanguages(["en-US"]);
         win.loadURL(data.url);
         windowNavigate(win, "window");
@@ -1847,7 +1847,7 @@ app.whenReady().then(() => {
             if ("win32" === process.platform || "linux" === process.platform) {
                 // 系统托盘
                 tray = new Tray(path.join(appDir, "stage", "icon-large.png"));
-                tray.setToolTip(`${path.basename(data.workspaceDir)} - SiYuan v${appVer}`);
+                tray.setToolTip(`${path.basename(data.workspaceDir)} - SvoyBloknot v${appVer}`);
                 const mainWindow = getWindowByContentId(event.sender.id);
                 if (!mainWindow || mainWindow.isDestroyed()) {
                     tray.destroy();

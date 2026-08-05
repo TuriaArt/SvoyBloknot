@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Error - SiYuan</title>
+    <title>Error - SvoyBloknot</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <style>
         body {
@@ -194,8 +195,8 @@
     </div>
     <div class="fn__flex-1"></div>
     <div class="feedback">
-        <a href="https://github.com/TuriaArt/SvoyBloknot/issues" target="_blank">Обратная связь / Feedback</a>
-        <a href="https://github.com/TuriaArt/SvoyBloknot/releases" target="_blank">Скачать / Download</a>
+        <a href="https://github.com/TuriaArt/SvoyBloknot/issues" target="_blank" rel="noopener">Обратная связь / Feedback</a>
+        <a href="https://github.com/TuriaArt/SvoyBloknot/releases" target="_blank" rel="noopener">Скачать / Download</a>
     </div>
     <div class="fn__flex-1"></div>
 </div>
@@ -217,8 +218,8 @@
     });
 
     // LOGO和版本号
-    const version = 'SiYuan v' + params.get('v') || '';
-    document.querySelector('#icon').innerHTML = `<img src="${params.get('icon') || ''}" alt="SiYuan LOGO"> ${version}`;
+    const version = 'SvoyBloknot v' + params.get('v') || '';
+    document.querySelector('#icon').innerHTML = `<img src="${params.get('icon') || ''}" alt="SvoyBloknot LOGO"> ${version}`;
 
     // 标题
     document.getElementById('titleEmoji').textContent = params.get('emoji');

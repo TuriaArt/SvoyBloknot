@@ -89,7 +89,7 @@ func SetPetalEnabled(name string, enabled bool) (ret *Petal, err error) {
 	}
 
 	if enabled && disallowInstall {
-		err = fmt.Errorf("require upgrade SiYuan to use this plugin [%s]", name)
+		err = fmt.Errorf("require upgrade SvoyBloknot to use this plugin [%s]", name)
 		logging.LogInfof("%s", err)
 		return
 	}

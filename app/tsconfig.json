@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./src/types/dist",
+    "rootDir": "./src",
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
@@ -8,7 +9,6 @@
       "./node_modules/@types"
     ],
     "types": [
-      "./src/types",
       "node"
     ],
     "declaration": true,

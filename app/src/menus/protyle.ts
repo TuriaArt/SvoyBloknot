@@ -38,6 +38,7 @@ import {openNewWindowById} from "../window/openNewWindow";
 import {openBacklink, openGraph} from "../layout/dock/util";
 /// #endif
 import {getSearch, isMobile} from "../util/functions";
+import {openByMobile} from "../editor/openLink";
 import * as dayjs from "dayjs";
 import {blockRender} from "../protyle/render/blockRender";
 import {renameAsset} from "../editor/rename";
@@ -725,6 +726,17 @@ export const contentMenu = (protyle: IProtyle, nodeElement: Element) => {
                 copyPlainText(getSelection().getRangeAt(0).toString());
             }
         }).element);
+        if (range.toString().trim()) {
+            const selectedText = range.toString();
+            window.siyuan.menus.menu.append(new MenuItem({
+                id: "translateRu",
+                icon: "iconLanguage",
+                label: window.siyuan.languages.aiTranslateRu,
+                click() {
+                    openByMobile(`https://translate.yandex.ru/?text=${encodeURIComponent(selectedText)}&lang=auto-ru`);
+                }
+            }).element);
+        }
         if (protyle.disabled || captionElement) {
             return;
         }

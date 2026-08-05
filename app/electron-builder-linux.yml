@@ -20,10 +20,10 @@ linux:
   icon: "src/assets/icon/"
   category: "Utility"
   syncDesktopName: true
-  executableName: "siyuan"
+  executableName: "svoybloknot"
   desktop: {
     entry: {
-      Name: "SiYuan",
+      Name: "SvoyBloknot",
       Comment: "Refactor your thinking",
       Type: "Application",
       Categories: "Utility;"
@@ -43,8 +43,6 @@ extraResources:
     to: "changelogs"
   - from: "stage"
     to: "stage"
-  - from: "guide"
-    to: "guide"
     filter: "!**/{.DS_Store,.git,.gitignore,.idea}"
   - from: "appearance/boot"
     to: "appearance/boot"
@@ -57,6 +55,7 @@ extraResources:
     filter: "!**/{.DS_Store}"
   - from: "appearance/langs"
     to: "appearance/langs"
+    filter: ["en.json", "ru.json"]
     filter: "!**/{.DS_Store}"
   - from: "appearance/emojis"
     to: "appearance/emojis"

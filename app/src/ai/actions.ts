@@ -195,6 +195,9 @@ export const AIActions = (elements: Element[], protyle: IProtyle) => {
         <div class="b3-list-item b3-list-item--narrow" data-action="${window.siyuan.languages.aiFixGrammarSpell}">
             ${window.siyuan.languages.aiFixGrammarSpell}
         </div>
+        <div class="b3-list-item b3-list-item--narrow" data-action="${window.siyuan.languages.aiTranslateRu}">
+            ${window.siyuan.languages.aiTranslateRu}
+        </div>
         <div class="b3-list-item b3-list-item--narrow" data-action="${clearContext}">
             ${window.siyuan.languages.clearContext}
         </div>

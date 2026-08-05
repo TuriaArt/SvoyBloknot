@@ -30,7 +30,7 @@ import (
 
 var workspaceCmd = &cobra.Command{
 	Use:   "workspace",
-	Short: "Manage SiYuan workspaces",
+	Short: "Manage SvoyBloknot workspaces",
 }
 
 var workspaceListCmd = &cobra.Command{
@@ -106,7 +106,7 @@ func resolveDefaultWorkspace() string {
 	if len(paths) > 0 {
 		return paths[len(paths)-1]
 	}
-	return filepath.Join(util.HomeDir, "SiYuan")
+	return filepath.Join(util.HomeDir, "SvoyBloknot")
 }
 
 func init() {

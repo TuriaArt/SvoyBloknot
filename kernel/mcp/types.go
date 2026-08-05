@@ -19,7 +19,7 @@ package mcp
 const (
 	ProtocolVersion   = "2025-06-18"
 	ProtocolV20260728 = "2026-07-28"
-	ServerName        = "SiYuan"
+	ServerName        = "SvoyBloknot"
 )
 
 type Meta struct {

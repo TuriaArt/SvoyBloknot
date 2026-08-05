@@ -53,7 +53,7 @@ export const renderWelcomeHTML = (hasModel = true): string => {
     const L = window.siyuan.languages;
     if (!hasModel) {
         return '<div class="agent-welcome">' +
-            '<div class="agent-welcome__greeting">' + (L.agentWelcomeGreeting || "Hello, I am SiYuan Agent") + "</div>" +
+            '<div class="agent-welcome__greeting">' + (L.agentWelcomeGreeting || "Hello, I am your SvoyBloknot Agent") + "</div>" +
             '<div class="agent-welcome__no-model">' +
                 '<div class="agent-welcome__no-model-title">' + (L.agentNoModel || "No model configured") + "</div>" +
                 '<div class="agent-welcome__no-model-tip">' + (L.agentNoModelTip || "Please configure a provider and model in Settings - AI first.") + "</div>" +
@@ -62,7 +62,7 @@ export const renderWelcomeHTML = (hasModel = true): string => {
         "</div>";
     }
     return '<div class="agent-welcome">' +
-        '<div class="agent-welcome__greeting">' + (L.agentWelcomeGreeting || "Hello, I am SiYuan Agent") + "</div>" +
+        '<div class="agent-welcome__greeting">' + (L.agentWelcomeGreeting || "Hello, I am your SvoyBloknot Agent") + "</div>" +
         '<div class="agent-welcome__examples">' +
             '<div class="agent-welcome__example" data-text="' + escapeHtml(L.agentExample1 || "") + '">' + (L.agentExample1 || "") + "</div>" +
             '<div class="agent-welcome__example" data-text="' + escapeHtml(L.agentExample2 || "") + '">' + (L.agentExample2 || "") + "</div>" +

@@ -45,7 +45,7 @@ import (
 var Mode = "prod"
 
 const (
-	Ver       = "3.7.3"
+	Ver       = "1.0.0-beta"
 	IsInsider = false
 )
 
@@ -124,8 +124,8 @@ func Boot() {
 	IncBootProgress(3, BootL10n(299, "Booting kernel..."))
 
 	// 由标准库 flag 解析 os.Args，再走统一的 BootWithFlags。
-	workspacePath := flag.String("workspace", "", "dir path of the workspace, default to ~/SiYuan/")
-	wdPath := flag.String("wd", WorkingDir, "working directory of SiYuan")
+	workspacePath := flag.String("workspace", "", "dir path of the workspace, default to ~/SvoyBloknot/")
+	wdPath := flag.String("wd", WorkingDir, "working directory of SvoyBloknot")
 	port := flag.String("port", "0", "port of the HTTP server")
 	readOnly := flag.String("readonly", "false", "read-only mode")
 	accessAuthCode := flag.String("accessAuthCode", "", "access auth code")
@@ -198,7 +198,7 @@ func BootWithFlags(workspacePath, wdPath, port, readOnly, accessAuthCode, lang, 
 	// 工作空间仅允许被一个内核进程伺服
 	tryLockWorkspace()
 
-	bootBanner := figure.NewColorFigure("SiYuan", "isometric3", "green", true)
+	bootBanner := figure.NewColorFigure("SvoyBloknot", "isometric3", "green", true)
 	logging.LogInfo("\n" + bootBanner.String())
 	logBootInfo()
 }

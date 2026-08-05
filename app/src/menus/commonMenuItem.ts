@@ -620,7 +620,7 @@ export const exportMd = (id: string) => {
             }
         }, {
             id: "exportSiYuanZip",
-            label: "SiYuan .sy.zip",
+            label: ".sy.zip",
             icon: "iconSiYuan",
             click: () => {
                 const msgId = showMessage(window.siyuan.languages.exporting, -1);
@@ -655,7 +655,7 @@ export const exportMd = (id: string) => {
                 }
             }, {
                 id: "exportHTML_SiYuan",
-                label: "HTML (SiYuan)",
+                label: "HTML (.sy)",
                 iconClass: "ft__error",
                 icon: "iconHTML5",
                 click: () => {
@@ -821,7 +821,7 @@ export const exportMd = (id: string) => {
                 }
             }, {
                 id: "exportHTML_SiYuan",
-                label: "HTML (SiYuan)",
+                label: "HTML (.sy)",
                 iconClass: "ft__error",
                 icon: "iconHTML5",
                 click: () => {

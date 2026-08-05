@@ -38,7 +38,7 @@ import (
 var ImageTool = &Tool{
 	Name:  "image",
 	Title: "Document images",
-	Description: "List and understand local images referenced by a SiYuan document, or generate an image asset. " +
+	Description: "List and understand local images referenced by a SvoyBloknot document, or generate an image asset. " +
 		"Use list before analyze. analyze sends the selected image to the configured vision provider. " +
 		"generate creates a reusable image asset in the target document's notebook.",
 	InputSchema: ToolSchema{

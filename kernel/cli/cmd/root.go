@@ -80,7 +80,7 @@ var rootCmd = &cobra.Command{
 			workspacePath = os.Getenv("SIYUAN_WORKSPACE_PATH")
 		}
 		if workspacePath == "" {
-			workspacePath = filepath.Join(util.HomeDir, "SiYuan")
+			workspacePath = filepath.Join(util.HomeDir, "SvoyBloknot")
 		}
 
 		if _, err := os.Stat(workspacePath); os.IsNotExist(err) {
@@ -257,8 +257,8 @@ func resolveWorkingDir() string {
 
 func init() {
 	rootCmd.Use = strings.TrimSuffix(filepath.Base(os.Args[0]), ".exe")
-	rootCmd.Short = "SiYuan Kernel v" + util.Ver
-	rootCmd.Long = "SiYuan Kernel v" + util.Ver + ". Manage workspace data directly or start the HTTP server."
+	rootCmd.Short = "SvoyBloknot Kernel v" + util.Ver
+	rootCmd.Long = "SvoyBloknot Kernel v" + util.Ver + ". Manage workspace data directly or start the HTTP server."
 
 	rootCmd.PersistentFlags().StringVarP(&workspacePath, "workspace", "w", "", "workspace path")
 	rootCmd.PersistentFlags().StringVarP(&outputFormat, "format", "f", "table", "output format: table | json")

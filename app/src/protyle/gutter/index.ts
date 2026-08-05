@@ -59,6 +59,7 @@ import {isMobile} from "../../util/functions";
 import {AIActions} from "../../ai/actions";
 import {activeBlur, renderTextMenu, showKeyboardToolbarUtil} from "../../mobile/util/keyboardToolbar";
 import {hideTooltip} from "../../dialog/tooltip";
+import {openByMobile} from "../../editor/openLink";
 import {appearanceMenu} from "../toolbar/Font";
 import {setPosition} from "../../util/setPosition";
 import {emitOpenMenu} from "../../plugin/EventBus";
@@ -1037,6 +1038,21 @@ export class Gutter {
             icon: "iconCopy",
             type: "submenu",
             submenu: copyMenu,
+        }).element);
+        window.siyuan.menus.menu.append(new MenuItem({
+            id: "translateRu",
+            icon: "iconLanguage",
+            label: window.siyuan.languages.aiTranslateRu,
+            click() {
+                let text = "";
+                selectsElement.forEach((item: HTMLElement) => {
+                    text += getPlainText(item) + "\n";
+                });
+                text = text.trim();
+                if (text) {
+                    openByMobile(`https://translate.yandex.ru/?text=${encodeURIComponent(text)}&lang=auto-ru`);
+                }
+            }
         }).element);
         if (!protyle.disabled) {
             window.siyuan.menus.menu.append(new MenuItem({
