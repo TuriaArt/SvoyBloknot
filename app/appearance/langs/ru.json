@@ -1640,7 +1640,7 @@
 	"theme11": "Использовать тему в светлом режиме",
 	"theme12": "Использовать тему в тёмном режиме",
 	"theme2": "Выберите значки, используемые в интерфейсе",
-	"language1": "Выберите язык отображения интерфейса",
+	"language1": "Выберите язык отображения интерфейса. В комплекте только английский и русский — остальные языки можно скачать на <a href=\"https://github.com/TuriaArt/SvoyBloknot/tree/master/app/appearance/langs\" target=\"_blank\">GitHub</a> и поместить в папку приложения <code class='fn__code'>appearance/langs</code>",
 	"summary": "Сводка",
 	"bookmark": "Закладка",
 	"icon": "Значок",

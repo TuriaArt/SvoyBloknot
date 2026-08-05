@@ -52,8 +52,7 @@ extraResources:
     filter: "!**/{.DS_Store}"
   - from: "appearance/langs"
     to: "appearance/langs"
-    filter: ["en.json", "ru.json"]
-    filter: "!**/{.DS_Store}"
+    filter: ["en.json", "ru.json", "!**/{.DS_Store}"]
   - from: "appearance/emojis"
     to: "appearance/emojis"
     filter: "!**/{.DS_Store}"

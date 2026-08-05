@@ -1640,7 +1640,7 @@
 	"theme11": "Use theme in light mode",
 	"theme12": "Use theme in dark mode",
 	"theme2": "Select the icons used in the user interface",
-	"language1": "Select the display language of the user interface",
+	"language1": "Select the display language of the user interface. Only English and Russian are bundled — other languages can be downloaded from <a href=\"https://github.com/TuriaArt/SvoyBloknot/tree/master/app/appearance/langs\" target=\"_blank\">GitHub</a> and placed into the app's <code class='fn__code'>appearance/langs</code> folder",
 	"summary": "Summary",
 	"bookmark": "Bookmark",
 	"icon": "Icon",
